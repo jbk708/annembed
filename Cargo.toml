@@ -63,7 +63,7 @@ num_cpus = { version = "1.16" }
 
 cpu-time = { version = "1.0" }
 
-ndarray = { version = "0.16", features = ["rayon", "serde"] }
+ndarray = { version = "0.17", features = ["rayon", "serde"] }
 # ndarray-linalg = { version = "0.16", default-features = false }
 lax = { version = "0.17" }
 sprs = { version = "0.11" }

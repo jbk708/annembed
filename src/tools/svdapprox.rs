@@ -757,7 +757,7 @@ where
         MatMode::FULL(mat) => check_range_approx(&mat.view(), &q_mat.view()),
         MatMode::CSR(csr_mat) => {
             let b = transpose_dense_mult_csr(q_mat, csr_mat);
-            let residue = csr_mat.to_dense() - &(q_mat.dot(&b));
+            let residue = &csr_mat.to_dense() - &q_mat.dot(&b);
             // estimate_first_singular_value_fullmat too expensive
             let norm_residue = norm_frobenius_full(&residue.view());
             norm_residue.to_f64().unwrap()
